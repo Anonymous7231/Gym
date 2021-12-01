@@ -48,6 +48,7 @@ namespace Gym
         static string fio;
         static int age;
         static char gender;
+        static int trainer_id;
         public static int ID
         {
             get { return id; }
@@ -66,6 +67,11 @@ namespace Gym
         public static char GENDER
         {
             get { return gender; }
+            set { }
+        }
+        public static int TRAINER_ID
+        {
+            get { return trainer_id; }
             set { }
         }
     }
@@ -242,7 +248,9 @@ namespace Gym
                             SqlCommand command = new SqlCommand(sql, connection);
                             connection.Open();
                             command.ExecuteNonQuery();
-                            UpdateDB();
+                            this.Hide();
+                            MainWindow A = new MainWindow();
+                            A.Show();
                         }
                     }
                 }
@@ -271,7 +279,9 @@ namespace Gym
                             SqlCommand command = new SqlCommand(sql, connection);
                             connection.Open();
                             command.ExecuteNonQuery();
-                            UpdateDB2();
+                            this.Hide();
+                            MainWindow A = new MainWindow();
+                            A.Show();
                         }
                     }
                 }

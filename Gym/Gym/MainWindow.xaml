@@ -19,7 +19,7 @@
     <Grid>
         <Label Content="Тренеры" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="14" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Width="395" Margin="1,1,0,0"/>
         <Label Content="Клиенты" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="14" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Width="396" Margin="397,1,0,0"/>
-        <DataGrid AutoGenerateColumns="False" x:Name="TrainerGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="397" FontFamily="Times New Roman" FontSize="12" Margin="0,33,397,54">
+        <DataGrid AutoGenerateColumns="False" x:Name="TrainerGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="406" FontFamily="Times New Roman" FontSize="12" Margin="0,33,388,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Тренер_ФИО}" Header="ФИО" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 <DataGridTextColumn Binding="{Binding Тренер_Возраст}" Header="Возраст" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
@@ -31,7 +31,7 @@
             <Button x:Name="deleteTrainerButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteTrainerButton_Click" Cursor="Hand"/>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,367,0,0"/>
-        <DataGrid AutoGenerateColumns="False" x:Name="ClientGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="398" FontFamily="Times New Roman" FontSize="12" Margin="396,33,0,54">
+        <DataGrid AutoGenerateColumns="False" x:Name="ClientGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="397" FontFamily="Times New Roman" FontSize="12" Margin="396,33,1,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Клиент_ФИО}" Header="ФИО" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 <DataGridTextColumn Binding="{Binding Клиент_Возраст}" Header="Возраст" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
@@ -51,7 +51,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,0,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,0,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="421" VerticalAlignment="Top" Width="1" Margin="793,0,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="783,0,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,411,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,411,0,0"/>
     </Grid>
