@@ -10,7 +10,7 @@
         Title="Спортзал" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="CanMinimize" KeyDown="Exit" Icon="Icon.png">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="50 8 75 8"/>
+            <Setter Property="Margin" Value="25 8 20 8"/>
             <Setter Property="Width" Value="85"/>
             <Setter Property="Height" Value="25"/>
         </Style>
@@ -50,6 +50,7 @@
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="395" Margin="1,368,0,1" Background="White">
             <Button x:Name="updateTrainerButton" Content="Обновить" FontFamily="Times New Roman" FontSize="10" Click="UpdateTrainerButton_Click" Cursor="Hand"/>
             <Button x:Name="deleteTrainerButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteTrainerButton_Click" Cursor="Hand"/>
+            <Button x:Name="detailTrainerButton" Content="Подробнее" FontFamily="Times New Roman" FontSize="10" Click="DetailTrainerButton_Click" Cursor="Hand"/>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,367,0,0"/>
         <DataGrid AutoGenerateColumns="False" x:Name="ClientGrid" SelectionChanged="ClientGrid_SelectionChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="397" FontFamily="Times New Roman" FontSize="12" Margin="396,33,1,44">
@@ -82,6 +83,7 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Width="396" Margin="0,368,1,1" Background="White">
             <Button x:Name="updateClientButton" Content="Обновить" FontFamily="Times New Roman" FontSize="10" Click="UpdateClientButton_Click" Cursor="Hand"/>
             <Button x:Name="deleteClientButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteClientButton_Click" Cursor="Hand"/>
+            <Button x:Name="detailClientButton" Content="Подробнее" FontFamily="Times New Roman" FontSize="10" Click="DetailClientButton_Click" Cursor="Hand"/>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="386" Margin="397,367,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,33,0,0"/>

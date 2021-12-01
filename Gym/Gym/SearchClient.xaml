@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gym"
+        xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf" x:Class="Gym.SearchClient"
+        mc:Ignorable="d"
+        Title="Спортзал" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="CanMinimize" KeyDown="Exit" Icon="Icon.png">
+    <Window.Resources>
+        <local:СпортзалDataSet x:Key="спортзалDataSet"/>
+        <CollectionViewSource x:Key="клиентViewSource" Source="{Binding Клиент, Source={StaticResource спортзалDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource клиентViewSource}">
+        <igWPF:XamDataGrid x:Name="клиентXamDataGrid" DataSource="{Binding}" FontFamily="Times New Roman" FontSize="14">
+            <igWPF:XamDataGrid.FieldSettings>
+                <igWPF:FieldSettings AllowRecordFiltering="True" Width="auto" AllowEdit="False" LabelTextAlignment="Center"/>
+            </igWPF:XamDataGrid.FieldSettings>
+        </igWPF:XamDataGrid>
+    </Grid>
+</Window>

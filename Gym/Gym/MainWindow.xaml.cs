@@ -94,6 +94,7 @@ namespace Gym
                 var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
                 connectionStringsSection.ConnectionStrings["DefaultConnection"].ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Спортзал;Integrated Security=True";
+                connectionStringsSection.ConnectionStrings["Gym.Properties.Settings.СпортзалConnectionString"].ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Спортзал;Integrated Security=True";
                 config.Save();
                 ConfigurationManager.RefreshSection("connectionStrings");
             }
@@ -107,6 +108,7 @@ namespace Gym
                     var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
                     connectionStringsSection.ConnectionStrings["DefaultConnection"].ConnectionString = "Data Source=.;Initial Catalog=Спортзал;Integrated Security=True";
+                    connectionStringsSection.ConnectionStrings["Gym.Properties.Settings.СпортзалConnectionString"].ConnectionString = "Data Source=.;Initial Catalog=Спортзал;Integrated Security=True";
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
@@ -238,6 +240,12 @@ namespace Gym
             {
             }
         }
+        private void DetailTrainerButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SearchTrainer A = new SearchTrainer();
+            A.Show();
+        }
         private void TrainerGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
             try
@@ -309,6 +317,12 @@ namespace Gym
             catch (Exception)
             {
             }
+        }
+        private void DetailClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SearchClient A = new SearchClient();
+            A.Show();
         }
         private void ClientGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
