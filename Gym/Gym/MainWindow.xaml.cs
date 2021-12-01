@@ -320,6 +320,33 @@ namespace Gym
             {
             }
         }
+        private void ClientGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                UpdateDB2();
+                if (ClientGrid.SelectedItems != null)
+                {
+                    for (int i = 0; i < ClientGrid.SelectedItems.Count; i++)
+                    {
+                        DataRowView datarowView = ClientGrid.SelectedItems[i] as DataRowView;
+                        DataRowView drv = (DataRowView)ClientGrid.SelectedItem;
+                        if (datarowView != null)
+                        {
+                            DataRow dataRow = (DataRow)datarowView.Row;
+                            if (Convert.ToInt32(drv[4].ToString()) - 1 < TrainerGrid.Items.Count - 1)
+                            {
+                                TrainerGrid.SelectedItem = TrainerGrid.Items[Convert.ToInt32(drv[4].ToString()) - 1];
+                                TrainerGrid.ScrollIntoView(TrainerGrid.Items[Convert.ToInt32(drv[4].ToString()) - 1]);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
         private void Exit(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)

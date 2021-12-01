@@ -52,11 +52,30 @@
             <Button x:Name="deleteTrainerButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteTrainerButton_Click" Cursor="Hand"/>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,367,0,0"/>
-        <DataGrid AutoGenerateColumns="False" x:Name="ClientGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="397" FontFamily="Times New Roman" FontSize="12" Margin="396,33,1,44">
+        <DataGrid AutoGenerateColumns="False" x:Name="ClientGrid" SelectionChanged="ClientGrid_SelectionChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="397" FontFamily="Times New Roman" FontSize="12" Margin="396,33,1,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Клиент_ФИО}" Header="ФИО" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 <DataGridTextColumn Binding="{Binding Клиент_Возраст}" Header="Возраст" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
-                <DataGridTextColumn Binding="{Binding Клиент_Пол}" Header="Пол" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridComboBoxColumn SelectedItemBinding="{Binding Клиент_Пол}" Header="Пол" Width="auto" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="TextElement.FontFamily" Value="Times New Roman"/>
+                            <Setter Property="TextElement.FontSize" Value="11"/>
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="TextElement.FontFamily" Value="Times New Roman"/>
+                            <Setter Property="TextElement.FontSize" Value="11"/>
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                    <DataGridComboBoxColumn.ItemsSource>
+                        <col:ArrayList>
+                            <sys:String>м</sys:String>
+                            <sys:String>ж</sys:String>
+                        </col:ArrayList>
+                    </DataGridComboBoxColumn.ItemsSource>
+                </DataGridComboBoxColumn>
                 <DataGridTextColumn Binding="{Binding ID_Тренера}" Header="ID Тренера" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -64,12 +83,12 @@
             <Button x:Name="updateClientButton" Content="Обновить" FontFamily="Times New Roman" FontSize="10" Click="UpdateClientButton_Click" Cursor="Hand"/>
             <Button x:Name="deleteClientButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteClientButton_Click" Cursor="Hand"/>
         </StackPanel>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,367,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="386" Margin="397,367,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,33,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,33,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="386" Margin="397,33,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,0,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,0,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,411,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="386" Margin="397,0,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="386" Margin="397,411,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,411,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="396,0,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="783,0,0,0"/>
