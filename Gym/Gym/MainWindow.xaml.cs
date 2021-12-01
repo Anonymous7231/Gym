@@ -207,27 +207,6 @@ namespace Gym
             {
             }
         }
-        private void UpdateDB2()
-        {
-            try
-            {
-                SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter2);
-                adapter2.Update(clienttable);
-            }
-            catch (Exception)
-            {
-            }
-        }
-        private void UpdateClientButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                UpdateDB2();
-            }
-            catch (Exception)
-            {
-            }
-        }
         private void DeleteTrainerButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -259,6 +238,47 @@ namespace Gym
             {
             }
         }
+        private void TrainerGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            try
+            {
+                UpdateDB();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void TrainerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                UpdateDB();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void UpdateDB2()
+        {
+            try
+            {
+                SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter2);
+                adapter2.Update(clienttable);
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void UpdateClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UpdateDB2();
+            }
+            catch (Exception)
+            {
+            }
+        }
         private void DeleteClientButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -285,16 +305,6 @@ namespace Gym
                         }
                     }
                 }
-            }
-            catch (Exception)
-            {
-            }
-        }
-        private void TrainerGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
-        {
-            try
-            {
-                UpdateDB();
             }
             catch (Exception)
             {

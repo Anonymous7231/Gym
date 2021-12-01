@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Gym"
         mc:Ignorable="d"
         Title="Спортзал" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="CanMinimize" KeyDown="Exit" Icon="Icon.png">
@@ -19,11 +21,30 @@
     <Grid>
         <Label Content="Тренеры" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="14" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Width="395" Margin="1,1,0,0"/>
         <Label Content="Клиенты" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="14" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Width="396" Margin="397,1,0,0"/>
-        <DataGrid AutoGenerateColumns="False" x:Name="TrainerGrid" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="406" FontFamily="Times New Roman" FontSize="12" Margin="0,33,388,44">
+        <DataGrid AutoGenerateColumns="False" x:Name="TrainerGrid" SelectionChanged="TrainerGrid_SelectionChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="406" FontFamily="Times New Roman" FontSize="12" Margin="0,33,388,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Тренер_ФИО}" Header="ФИО" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 <DataGridTextColumn Binding="{Binding Тренер_Возраст}" Header="Возраст" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
-                <DataGridTextColumn Binding="{Binding Тренер_Пол}" Header="Пол" Width="auto" FontFamily="Times New Roman" FontSize="11" HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridComboBoxColumn SelectedItemBinding="{Binding Тренер_Пол}" Header="Пол" Width="auto" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="TextElement.FontFamily" Value="Times New Roman"/>
+                            <Setter Property="TextElement.FontSize" Value="11"/>
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="TextElement.FontFamily" Value="Times New Roman"/>
+                            <Setter Property="TextElement.FontSize" Value="11"/>
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                    <DataGridComboBoxColumn.ItemsSource>
+                        <col:ArrayList>
+                            <sys:String>м</sys:String>
+                            <sys:String>ж</sys:String>
+                        </col:ArrayList>
+                    </DataGridComboBoxColumn.ItemsSource>
+                </DataGridComboBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="395" Margin="1,368,0,1" Background="White">
@@ -44,15 +65,15 @@
             <Button x:Name="deleteClientButton" Content="Удалить" FontFamily="Times New Roman" FontSize="10" Click="DeleteClientButton_Click" Cursor="Hand"/>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,367,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="396,0,0,0"/>
-        <Button x:Name="ForFocus" Height="1" MinHeight="1" MaxHeight="1" Width="1" MinWidth="1" MaxWidth="1" Opacity="0" FocusVisualStyle="{x:Null}" Margin="793,421,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,33,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,33,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,0,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,0,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="783,0,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="396" Margin="397,411,0,0"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" VerticalAlignment="Top" Width="395" Margin="1,411,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="396,0,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1" Margin="783,0,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="1"/>
+        <Button x:Name="ForFocus" Height="1" MinHeight="1" MaxHeight="1" Width="1" MinWidth="1" MaxWidth="1" Opacity="0" FocusVisualStyle="{x:Null}" Margin="793,421,0,0"/>
     </Grid>
 </Window>
